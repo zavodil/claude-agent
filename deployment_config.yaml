@@ -1,0 +1,15 @@
+http:
+  port: 3000
+  health_check_path: /
+name: Claude Artifact Runner
+summary: A React-based web application that runs Claude artifacts with custom API integration, featuring an emoji charades game that uses AI to generate quiz questions
+environment_variables:
+  - name: VITE_OPENAI_API_KEY
+    value: <your_api_key>
+    description: API key for authentication with either Anthropic or OpenAI API services. Required for the Claude API integration to function.
+  - name: VITE_OPENAI_BASE_URL
+    value: https://api.anthropic.com
+    description: Base URL for the API endpoint. Defaults to Anthropic API but can be changed to use OpenAI or other compatible endpoints.
+  - name: VITE_DEFAULT_MODEL_NAME
+    value: claude-3-5-sonnet-20241022
+    description: Specifies which AI model to use. Can be customized to use different model versions or providers.
