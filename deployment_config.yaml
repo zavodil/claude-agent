@@ -1,6 +1,6 @@
 http:
-  port: 3000
-  health_check_path: /
+  port: 80 # Port on which the agent's HTTP server listens
+  health_check_path: / # Path for health checks
 name: Claude Artifact Runner
 summary: A React-based web application that runs Claude artifacts with custom API integration, featuring an emoji charades game that uses AI to generate quiz questions
 environment_variables:
