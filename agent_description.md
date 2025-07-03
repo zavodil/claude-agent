@@ -1,47 +1,38 @@
 # Claude Artifact Runner
 
-A web application that allows you to run and interact with Claude artifacts locally, featuring a built-in emoji charades game that demonstrates the Claude API integration capabilities.
-
-## Overview
-
-This agent provides a local development environment for testing and running Claude artifacts with custom API integration. It includes a fully functional emoji charades game where players decode emoji clues to reveal hidden sayings, demonstrating real-time AI interaction through the Claude API.
+A React-based web application that runs Claude artifacts with custom API integration. The application features an interactive emoji charades game where players decode emoji clues to reveal hidden sayings, proverbs, and idioms.
 
 ## Main Functions
 
-- **Local Artifact Execution**: Runs Claude artifacts in a React-based web environment
-- **API Integration**: Supports both Anthropic Claude and OpenAI API backends for AI-powered interactions
-- **Interactive Gaming**: Features an emoji charades game with:
-  - Dynamic question generation using AI
-  - Multi-language support (English and Spanish)
-  - Score tracking and combo multipliers
-  - Hint system for challenging questions
-  - Streak tracking and accuracy metrics
+- **Artifact Execution**: Provides a runtime environment for Claude-generated React artifacts
+- **API Integration**: Seamlessly integrates with either Anthropic's Claude API or OpenAI's API for AI-powered content generation
+- **Emoji Charades Game**: 
+  - Generates emoji-based puzzles representing common sayings and idioms
+  - Tracks player score, accuracy, and combo streaks
+  - Provides hints and feedback for each answer
+  - Supports multiple languages with built-in translations
+  - Prevents repetition by tracking previously used sayings
 
 ## Key Features
 
-- **Flexible API Backend**: Automatically detects and switches between Anthropic and OpenAI APIs based on configuration
-- **Internationalization**: Built-in support for multiple languages with automatic locale detection
-- **Modern UI**: Responsive design with Tailwind CSS styling
-- **Real-time Feedback**: Immediate validation of answers with visual feedback
-- **Progressive Difficulty**: Tracks used questions to avoid repetition
+- **Multi-language Support**: Currently supports English and Spanish with extensible translation system
+- **Dynamic Question Generation**: Uses AI to create unique, contextual emoji puzzles
+- **Gamification Elements**: Includes scoring system, combo multipliers, and streak tracking
+- **Responsive Design**: Built with Tailwind CSS for optimal display across devices
+- **Docker Support**: Includes containerization for easy deployment
 
 ## Inputs
 
-- **User Input**: Text answers entered via web interface (HTTP/Browser)
-- **API Configuration**: Environment variables for API setup
-  - `VITE_OPENAI_API_KEY`: API authentication key
-  - `VITE_OPENAI_BASE_URL`: API endpoint URL
-  - `VITE_DEFAULT_MODEL_NAME`: AI model selection
+- **User Input**: Text answers entered via web interface (HTTP)
+- **API Configuration**: Environment variables for API endpoints and authentication
+- **Game Controls**: Button clicks and keyboard input (Enter key) via web interface
 
 ## Outputs
 
-- **Web Interface**: Interactive game interface served via HTTP (default port 3000)
-- **Game Feedback**: Visual and textual responses including:
-  - Emoji puzzles and their solutions
-  - Score updates and accuracy metrics
-  - Hints and answer validation
-  - Combo multipliers and streak information
+- **Visual Display**: Emoji puzzles, scores, and game interface rendered in web browser (HTTP)
+- **API Responses**: AI-generated quiz questions and hints displayed in the UI
+- **Game Feedback**: Real-time scoring, accuracy percentages, and performance metrics
 
-## Usage
+## Configuration Requirements
 
-The application starts a local web server that automatically opens in your browser. Players can immediately begin playing the emoji charades game, which demonstrates the Claude API integration by generating unique emoji puzzles for common sayings and idioms.
+The application requires API credentials to function properly. It can be configured to work with either Anthropic's Claude API or OpenAI's API by setting the appropriate environment variables.
