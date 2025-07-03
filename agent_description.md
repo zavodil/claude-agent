@@ -1,47 +1,47 @@
 # Claude Artifact Runner
 
-A web application that allows you to run and interact with Claude artifacts locally, featuring a built-in emoji charades game that demonstrates the Claude API integration capabilities.
+A React-based web application that runs Claude artifacts with custom API integration, featuring an interactive emoji charades game powered by AI.
 
 ## Overview
 
-This agent provides a local development environment for testing and running Claude artifacts with custom API integration. It includes a fully functional emoji charades game where players decode emoji clues to reveal hidden sayings, demonstrating real-time AI interaction through the Claude API.
+This agent provides a local development and deployment environment for Claude artifacts. It includes a built-in example game where players decode emoji representations of common sayings, idioms, and proverbs. The application uses AI (Claude or OpenAI) to dynamically generate quiz questions, making each game session unique and engaging.
 
 ## Main Functions
 
-- **Local Artifact Execution**: Runs Claude artifacts in a React-based web environment
-- **API Integration**: Supports both Anthropic Claude and OpenAI API backends for AI-powered interactions
-- **Interactive Gaming**: Features an emoji charades game with:
-  - Dynamic question generation using AI
-  - Multi-language support (English and Spanish)
-  - Score tracking and combo multipliers
-  - Hint system for challenging questions
-  - Streak tracking and accuracy metrics
+- **Artifact Hosting**: Provides a React-based environment to run Claude artifacts locally
+- **AI Integration**: Seamlessly connects to Anthropic Claude or OpenAI APIs for dynamic content generation
+- **Emoji Charades Game**: 
+  - Converts common sayings and idioms into emoji puzzles
+  - Tracks player score, accuracy, and combo multipliers
+  - Provides hints and immediate feedback
+  - Supports multiple languages with built-in translations
+- **Development Server**: Includes hot-reload development environment using Vite
+- **Production Deployment**: Docker-ready with nginx for serving the built application
 
 ## Key Features
 
-- **Flexible API Backend**: Automatically detects and switches between Anthropic and OpenAI APIs based on configuration
-- **Internationalization**: Built-in support for multiple languages with automatic locale detection
-- **Modern UI**: Responsive design with Tailwind CSS styling
-- **Real-time Feedback**: Immediate validation of answers with visual feedback
-- **Progressive Difficulty**: Tracks used questions to avoid repetition
+- **Dynamic Question Generation**: Uses AI to create unique emoji puzzles in real-time
+- **Multi-language Support**: Includes translations for multiple locales
+- **Score Tracking**: Maintains player statistics including accuracy percentage and combo streaks
+- **Responsive Design**: Built with Tailwind CSS for optimal display across devices
+- **API Flexibility**: Can switch between Anthropic and OpenAI endpoints via configuration
 
 ## Inputs
 
-- **User Input**: Text answers entered via web interface (HTTP/Browser)
-- **API Configuration**: Environment variables for API setup
-  - `VITE_OPENAI_API_KEY`: API authentication key
-  - `VITE_OPENAI_BASE_URL`: API endpoint URL
-  - `VITE_DEFAULT_MODEL_NAME`: AI model selection
+- **HTTP**: Web interface accessible via browser on port 3000
+- **User Input**: Text answers entered through the game interface
+- **Environment Variables**: Configuration provided at runtime
 
 ## Outputs
 
-- **Web Interface**: Interactive game interface served via HTTP (default port 3000)
-- **Game Feedback**: Visual and textual responses including:
-  - Emoji puzzles and their solutions
-  - Score updates and accuracy metrics
-  - Hints and answer validation
-  - Combo multipliers and streak information
+- **HTTP**: Interactive web application with game interface
+- **Visual Feedback**: Real-time score updates, emoji puzzles, and game statistics
+- **API Responses**: AI-generated quiz questions displayed in the game
 
-## Usage
+## Configuration Requirements
 
-The application starts a local web server that automatically opens in your browser. Players can immediately begin playing the emoji charades game, which demonstrates the Claude API integration by generating unique emoji puzzles for common sayings and idioms.
+The application requires the following environment variables to be set:
+
+- `VITE_OPENAI_API_KEY`: API key for Anthropic or OpenAI services
+- `VITE_OPENAI_BASE_URL`: API endpoint URL (defaults to Anthropic)
+- `VITE_DEFAULT_MODEL_NAME`: AI model to use for content generation
