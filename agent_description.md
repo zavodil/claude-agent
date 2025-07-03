@@ -1,47 +1,33 @@
 # Claude Artifact Runner
 
-A web application that allows you to run and interact with Claude artifacts locally, featuring a built-in emoji charades game that demonstrates the Claude API integration capabilities.
-
-## Overview
-
-This agent provides a local development environment for testing and running Claude artifacts with custom API integration. It includes a fully functional emoji charades game where players decode emoji clues to reveal hidden sayings, demonstrating real-time AI interaction through the Claude API.
+A React-based web application that runs Claude artifacts with custom API integration. The application features an interactive emoji charades game where players decode emoji clues to reveal hidden sayings, proverbs, and idioms.
 
 ## Main Functions
 
-- **Local Artifact Execution**: Runs Claude artifacts in a React-based web environment
-- **API Integration**: Supports both Anthropic Claude and OpenAI API backends for AI-powered interactions
-- **Interactive Gaming**: Features an emoji charades game with:
-  - Dynamic question generation using AI
-  - Multi-language support (English and Spanish)
-  - Score tracking and combo multipliers
-  - Hint system for challenging questions
-  - Streak tracking and accuracy metrics
+- **Artifact Execution**: Provides a runtime environment for Claude-generated React artifacts
+- **AI Integration**: Seamlessly integrates with Anthropic's Claude API or OpenAI's API for dynamic content generation
+- **Emoji Charades Game**: An educational game that challenges players to interpret emoji representations of common sayings
+- **Multi-language Support**: Supports multiple languages including English and Spanish
+- **Score Tracking**: Maintains player scores, streaks, and accuracy statistics
+- **Dynamic Question Generation**: Uses AI to generate unique, randomized quiz questions
 
 ## Key Features
 
-- **Flexible API Backend**: Automatically detects and switches between Anthropic and OpenAI APIs based on configuration
-- **Internationalization**: Built-in support for multiple languages with automatic locale detection
-- **Modern UI**: Responsive design with Tailwind CSS styling
-- **Real-time Feedback**: Immediate validation of answers with visual feedback
-- **Progressive Difficulty**: Tracks used questions to avoid repetition
+- Real-time AI-powered question generation with category and style variations
+- Combo multiplier system for consecutive correct answers
+- Hint system to help players when stuck
+- Responsive design with Tailwind CSS styling
+- Docker containerization for easy deployment
+- Configurable API backend (supports both Anthropic and OpenAI)
 
 ## Inputs
 
-- **User Input**: Text answers entered via web interface (HTTP/Browser)
-- **API Configuration**: Environment variables for API setup
-  - `VITE_OPENAI_API_KEY`: API authentication key
-  - `VITE_OPENAI_BASE_URL`: API endpoint URL
-  - `VITE_DEFAULT_MODEL_NAME`: AI model selection
+- **User Input**: Text answers entered via web interface (HTTP)
+- **API Configuration**: Environment variables for API authentication and model selection
+- **User Interactions**: Button clicks and keyboard input through the web UI
 
 ## Outputs
 
-- **Web Interface**: Interactive game interface served via HTTP (default port 3000)
-- **Game Feedback**: Visual and textual responses including:
-  - Emoji puzzles and their solutions
-  - Score updates and accuracy metrics
-  - Hints and answer validation
-  - Combo multipliers and streak information
-
-## Usage
-
-The application starts a local web server that automatically opens in your browser. Players can immediately begin playing the emoji charades game, which demonstrates the Claude API integration by generating unique emoji puzzles for common sayings and idioms.
+- **Web Interface**: Interactive game interface served via HTTP (port 3000 in development, port 80 in production)
+- **Game Feedback**: Visual feedback including scores, streaks, and answer validation
+- **AI-Generated Content**: Dynamic quiz questions with emoji representations and hints
