@@ -1,47 +1,26 @@
-# Claude Artifact Runner
+### Agent Name
+Claude Artifact Runner
 
-A web application that allows you to run and interact with Claude artifacts locally, featuring a built-in emoji charades game that demonstrates the Claude API integration capabilities.
+### Description
+The Claude Artifact Runner is a web-based application designed to host and execute AI-powered interactive experiences, specifically "Claude artifacts." It features a built-in "Emoji Charades" game where users decode emoji clues to guess common sayings. The game leverages AI models (Anthropic or OpenAI) to dynamically generate quiz questions, providing an engaging and interactive user experience.
 
-## Overview
+### Functionality
+*   **AI Integration:** Connects to either Anthropic or OpenAI API services to generate content. It exposes a `window.claude.complete()` function, allowing embedded artifacts to make AI calls.
+*   **Emoji Charades Game:** Provides a fully functional game where:
+    *   AI generates unique emoji-based questions representing common sayings.
+    *   Users input their guesses for the sayings.
+    *   The game provides immediate feedback on answers (correct, close, or incorrect).
+    *   It tracks user scores, total questions, accuracy, and maintains a combo streak.
+    *   Offers hints for challenging questions.
+*   **User Interface:** Presents a responsive and interactive web interface for playing the game, including start/reset options, input fields, and score displays.
 
-This agent provides a local development environment for testing and running Claude artifacts with custom API integration. It includes a fully functional emoji charades game where players decode emoji clues to reveal hidden sayings, demonstrating real-time AI interaction through the Claude API.
+### Inputs
+*   **Web Interface (User):** User guesses via text input, button clicks (Play, Submit, Hint, Next Question, Reset).
+*   **Environment Variables (Configuration):**
+    *   `VITE_OPENAI_API_KEY`: API key for authentication with Anthropic or OpenAI API services.
+    *   `VITE_OPENAI_BASE_URL`: Base URL for the AI API endpoint (defaults to Anthropic).
+    *   `VITE_DEFAULT_MODEL_NAME`: Specifies the AI model to use for content generation.
 
-## Main Functions
-
-- **Local Artifact Execution**: Runs Claude artifacts in a React-based web environment
-- **API Integration**: Supports both Anthropic Claude and OpenAI API backends for AI-powered interactions
-- **Interactive Gaming**: Features an emoji charades game with:
-  - Dynamic question generation using AI
-  - Multi-language support (English and Spanish)
-  - Score tracking and combo multipliers
-  - Hint system for challenging questions
-  - Streak tracking and accuracy metrics
-
-## Key Features
-
-- **Flexible API Backend**: Automatically detects and switches between Anthropic and OpenAI APIs based on configuration
-- **Internationalization**: Built-in support for multiple languages with automatic locale detection
-- **Modern UI**: Responsive design with Tailwind CSS styling
-- **Real-time Feedback**: Immediate validation of answers with visual feedback
-- **Progressive Difficulty**: Tracks used questions to avoid repetition
-
-## Inputs
-
-- **User Input**: Text answers entered via web interface (HTTP/Browser)
-- **API Configuration**: Environment variables for API setup
-  - `VITE_OPENAI_API_KEY`: API authentication key
-  - `VITE_OPENAI_BASE_URL`: API endpoint URL
-  - `VITE_DEFAULT_MODEL_NAME`: AI model selection
-
-## Outputs
-
-- **Web Interface**: Interactive game interface served via HTTP (default port 3000)
-- **Game Feedback**: Visual and textual responses including:
-  - Emoji puzzles and their solutions
-  - Score updates and accuracy metrics
-  - Hints and answer validation
-  - Combo multipliers and streak information
-
-## Usage
-
-The application starts a local web server that automatically opens in your browser. Players can immediately begin playing the emoji charades game, which demonstrates the Claude API integration by generating unique emoji puzzles for common sayings and idioms.
+### Outputs
+*   **Web Interface (Display):** Displays game elements such as emoji questions, user input fields, correct answers, scores, feedback messages, and game statistics.
+*   **External API Calls (HTTP):** Sends requests to configured AI API endpoints (Anthropic or OpenAI) to generate quiz questions.
