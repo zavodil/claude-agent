@@ -1,47 +1,26 @@
-# Claude Artifact Runner
+### Name
+Claude Artifact Runner
 
-A web application that allows you to run and interact with Claude artifacts locally, featuring a built-in emoji charades game that demonstrates the Claude API integration capabilities.
+### Description
+This agent is a React-based web application designed to run interactive Claude artifacts. It features an engaging emoji charades game where an AI model dynamically generates quiz questions, challenging users to decode emoji clues into common sayings. It serves as a platform for deploying and interacting with AI-powered web applications.
 
-## Overview
+### Key Features
+*   **AI-Powered Question Generation:** Dynamically creates unique emoji-based charades questions and hints using an integrated AI model.
+*   **Interactive Game Play:** Users guess sayings from emoji clues, receive instant feedback, and track their score, accuracy, and combo streaks.
+*   **Customizable AI Backend:** Supports integration with either Anthropic or OpenAI API services for content generation.
+*   **Localization:** Provides game text in multiple languages based on user or application locale.
+*   **Extensible Artifact Runner:** Serves as a foundational platform for deploying and running other Claude-style interactive web applications.
 
-This agent provides a local development environment for testing and running Claude artifacts with custom API integration. It includes a fully functional emoji charades game where players decode emoji clues to reveal hidden sayings, demonstrating real-time AI interaction through the Claude API.
+### Inputs
+*   **User Interface (Web Browser):** Text input for user guesses in the emoji charades game.
+*   **External API (HTTP):** Configuration details (API key, base URL, model name) for AI service integration.
 
-## Main Functions
+### Outputs
+*   **User Interface (Web Browser):** Displays the interactive emoji charades game, including emoji clues, hints, user feedback, and game statistics.
+*   **External API (HTTP):** Sends requests to configured AI API endpoints to generate quiz questions.
 
-- **Local Artifact Execution**: Runs Claude artifacts in a React-based web environment
-- **API Integration**: Supports both Anthropic Claude and OpenAI API backends for AI-powered interactions
-- **Interactive Gaming**: Features an emoji charades game with:
-  - Dynamic question generation using AI
-  - Multi-language support (English and Spanish)
-  - Score tracking and combo multipliers
-  - Hint system for challenging questions
-  - Streak tracking and accuracy metrics
-
-## Key Features
-
-- **Flexible API Backend**: Automatically detects and switches between Anthropic and OpenAI APIs based on configuration
-- **Internationalization**: Built-in support for multiple languages with automatic locale detection
-- **Modern UI**: Responsive design with Tailwind CSS styling
-- **Real-time Feedback**: Immediate validation of answers with visual feedback
-- **Progressive Difficulty**: Tracks used questions to avoid repetition
-
-## Inputs
-
-- **User Input**: Text answers entered via web interface (HTTP/Browser)
-- **API Configuration**: Environment variables for API setup
-  - `VITE_OPENAI_API_KEY`: API authentication key
-  - `VITE_OPENAI_BASE_URL`: API endpoint URL
-  - `VITE_DEFAULT_MODEL_NAME`: AI model selection
-
-## Outputs
-
-- **Web Interface**: Interactive game interface served via HTTP (default port 3000)
-- **Game Feedback**: Visual and textual responses including:
-  - Emoji puzzles and their solutions
-  - Score updates and accuracy metrics
-  - Hints and answer validation
-  - Combo multipliers and streak information
-
-## Usage
-
-The application starts a local web server that automatically opens in your browser. Players can immediately begin playing the emoji charades game, which demonstrates the Claude API integration by generating unique emoji puzzles for common sayings and idioms.
+### Configuration
+The agent's behavior, particularly its AI integration, can be customized using the following environment variables:
+*   **`VITE_OPENAI_API_KEY`**: Your API key for authentication with the chosen AI service (Anthropic or OpenAI). This is required for the Claude API integration to function.
+*   **`VITE_OPENAI_BASE_URL`**: The base URL for the AI API endpoint. Defaults to Anthropic's API but can be set to OpenAI or other compatible services.
+*   **`VITE_DEFAULT_MODEL_NAME`**: Specifies the AI model to be used for question generation. Can be customized to use different model versions or providers.
